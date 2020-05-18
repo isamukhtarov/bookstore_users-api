@@ -7,6 +7,7 @@ import (
 	"log"
 )
 
+// Constants of mysql database connections data
 const (
 	mysql_users_username = "root"
 	mysql_users_password = "root"
@@ -14,6 +15,7 @@ const (
 	mysql_users_schema   = "users_db"
 )
 
+// Database variables
 var (
 	Client *sql.DB
 	username = mysql_users_username
@@ -22,6 +24,7 @@ var (
 	schema   = mysql_users_schema
 )
 
+// Initialize connection to mysql database
 func init()  {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8",
 		username, password, host, schema)
