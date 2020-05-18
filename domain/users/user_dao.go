@@ -77,7 +77,7 @@ func (user *User) Update() *errors.RestErr{
 	// Execute user update query form database
 	_, err = stmt.Exec(user.FirstName, user.LastName, user.Email, user.Id)
 	if err != nil {
-		logger.Error("Error when trying to delete user", err)
+		logger.Error("Error when trying to update user", err)
 		return errors.NewInternalServerError("database error")
 	}
 
